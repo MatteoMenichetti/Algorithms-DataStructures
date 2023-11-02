@@ -3,4 +3,5 @@ project(numbers LANGUAGES C CXX)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(main src/main.c)
+add_executable(selectionSort ./src/selectionSort.c)
+
