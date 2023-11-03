@@ -3,7 +3,7 @@
 int sort(int *array, int length) {
     int min;
 
-    for (int i = 0; i < length - 1; i++) {
+    for (int i = 0; i < length - 2; i++) {
         min = i;
         for (int j = i + 1; j < length; j++) {
             if (array[j] < array[min])
