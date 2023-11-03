@@ -4,17 +4,30 @@ extern "C" {
 #include "../lib/common.h"
 }
 
-TEST(SelectionSort, sort) {
-    int array[10] = {9, 8, 6, 5, 7, 4, 3, 1, 2, 0}, arraySorted[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, length =
-            sizeof(array) / sizeof(array[0]);
-    sort(array, length);
-    for (int i: array)
-        ASSERT_EQ(array[i], arraySorted[i]);
+TEST(InsertionSort, sort) {
+    int array[4] = {1, 2, 3, 0};
+    sort(array, 4);
+    for (int i = 0; i < 4; i++)
+        EXPECT_EQ(array[i], i);
 }
 
-TEST(SelectionSort, sortElEqual) {
-    int array[5] = {0, 0, 0, 0, 0};
-    sort(array, 5);
-    for (int i: array)
-        ASSERT_EQ(i, 0);
+TEST(InsertionSort, sort1) {
+    int array[4]={0,1,2,3};
+    sort(array, 4);
+    for (int i = 0; i < 4; i++)
+        EXPECT_EQ(array[i], i);
+}
+
+TEST(InsertionSort, sort2) {
+    int array[4]={3,2,1,0};
+    sort(array, 4);
+    for (int i = 0; i < 4; i++)
+        EXPECT_EQ(array[i], i);
+}
+
+TEST(SelectionSort, swap){
+    int array[2]={0, 1};
+    swap(array, 0, 1);
+    ASSERT_EQ(array[0], 1);
+    ASSERT_EQ(array[1], 0);
 }
