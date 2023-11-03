@@ -1,5 +1,8 @@
 #include <gtest/gtest.h>
-#include "../src/selectionSort.c"
+
+extern "C" {
+#include "../lib/common.h"
+}
 
 TEST(SelectionSort, sort) {
     int array[10] = {9, 8, 6, 5, 7, 4, 3, 1, 2, 0}, arraySorted[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, length =
