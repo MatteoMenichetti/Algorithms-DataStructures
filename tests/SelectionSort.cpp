@@ -32,6 +32,13 @@ TEST(InsertionSort, sort3) {
         EXPECT_EQ(array[i], arraySorted[i]);
 }
 
+TEST(InsertionSort, sort4) {
+    int array[4] = {-1, 1, 0, 2}, arraySorted[4] = {-1, 0, 1, 2};
+    sort(array, 4);
+    for (int i = 0; i < 4; i++)
+        EXPECT_EQ(array[i], arraySorted[i]);
+}
+
 TEST(SelectionSort, swap) {
     int array[2] = {0, 1};
     swap(array, 0, 1);
