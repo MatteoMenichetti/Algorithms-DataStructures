@@ -1,6 +1,6 @@
 #include "../lib/common.h"
 
-int order(int *array, int length) {
+int control(const int *array, int length) {
     if (length <= 2) {
         printf("order: length of array <= 2\n");
         return EXIT_FAILURE;
