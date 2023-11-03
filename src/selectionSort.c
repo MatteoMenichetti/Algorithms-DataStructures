@@ -1,7 +1,9 @@
 #include "../lib/common.h"
 
 int sort(int *array, int length) {
-    int min;
+    int o = control(array, length), min;
+
+    if(o!=EXIT_SUCCESS)return o;
 
     for (int i = 0; i < length - 2; i++) {
         min = i;
