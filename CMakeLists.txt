@@ -3,7 +3,8 @@ project(numbers LANGUAGES C CXX)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(AllTests ./tests/CommonTests.cpp ./src/order.c src/selectionSort.c lib/common.h)
+add_executable(AllTests ./tests/CommonTests.cpp ./src/order.c src/selectionSort.c lib/common.h
+        tests/SelectionSort.cpp)
 
 add_subdirectory(lib/google_test_lib)
 include_directories(lib/google_test_lib/googletest/include)
