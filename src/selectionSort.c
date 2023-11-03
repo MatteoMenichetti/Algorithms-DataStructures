@@ -1,12 +1,5 @@
 #include "../lib/common.h"
 
-int selectionSort(int * array, int length){
-
-    order(array, length);
-
-    return sort(array, length);
-}
-
 int sort(int *array, int length){
     int min;
 
