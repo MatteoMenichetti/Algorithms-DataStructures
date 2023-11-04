@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 extern "C" {
-#include "../lib/quickSort.h"
+#include "../lib/quick_sort.h"
 }
 
 TEST(QuickSort, sort) {
