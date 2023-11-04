@@ -8,15 +8,10 @@ add_executable(CommonTest ./tests/CommonTests.cpp src/control.c)
 add_executable(InsertionSortTest ./tests/InsertionSort.cpp
         ./src/insertionSort.c ./src/control.c ./lib/common.h)
 
-add_executable(insertionSort ./src/insertionSort.c ./lib/common.h ./src/control.c )
-
 add_executable(SelectionSortTest ./tests/SelectionSort.cpp
         ./src/selectionSort.c src/control.c ./lib/common.h)
-add_executable(selectionSort ./src/selectionSort.c ./lib/common.h src/control.c )
 
 add_executable(QuickSortTests ./tests/QuickSortTests.cpp ./lib/common.h ./src/control.c ./src/quickSort.c
-        lib/quickSort.h)
-add_executable(quickSort ./lib/common.h ./src/control.c ./src/quickSort.c
         lib/quickSort.h)
 
 add_subdirectory(lib/google_test_lib)
