@@ -39,8 +39,12 @@ TEST(QuickSort, sort4) {
         EXPECT_EQ(array[i], arraySorted[i]);
 }
 
-TEST(QuickSort, selectPivot){
-
+TEST(QuickSort, partition) {
+    int array[4] = {3, 2, 1, 0}, mid_array[4] = {0, 3, 2, 1};
+    int i = partition(array, 0, 3);
+    ASSERT_EQ(i, 0);
+    for (int j = 0; j < 4; j++)
+        ASSERT_EQ(array[i], mid_array[i]);
 }
 
 TEST(QuickSort, swap) {
