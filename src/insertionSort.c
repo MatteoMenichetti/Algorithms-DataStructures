@@ -26,5 +26,3 @@ int sort(int *array, int length) {
     }
     return EXIT_SUCCESS;
 }
-
-
