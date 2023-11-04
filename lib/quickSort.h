@@ -1,3 +1,5 @@
 #include "common.h"
 
-int selectPivot(int *array);
+void quick_sort(int *, int, int);
+
+int partition(int *, int, int);
