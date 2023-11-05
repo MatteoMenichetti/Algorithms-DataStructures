@@ -4,35 +4,35 @@ extern "C" {
 #include "../lib/common.h"
 }
 
-TEST(InsertionSort, sort) {
+TEST(SelectionSort, sort) {
     int array[4] = {1, 2, 3, 0};
     sort(array, 4);
     for (int i = 0; i < 4; i++)
         EXPECT_EQ(array[i], i);
 }
 
-TEST(InsertionSort, sort1) {
+TEST(SelectionSort, sort1) {
     int array[4] = {0, 1, 2, 3};
     sort(array, 4);
     for (int i = 0; i < 4; i++)
         EXPECT_EQ(array[i], i);
 }
 
-TEST(InsertionSort, sort2) {
+TEST(SelectionSort, sort2) {
     int array[4] = {3, 2, 1, 0};
     sort(array, 4);
     for (int i = 0; i < 4; i++)
         EXPECT_EQ(array[i], i);
 }
 
-TEST(InsertionSort, sort3) {
+TEST(SelectionSort, sort3) {
     int array[4] = {3, 2, 1, 2}, arraySorted[4] = {1, 2, 2, 3};
     sort(array, 4);
     for (int i = 0; i < 4; i++)
         EXPECT_EQ(array[i], arraySorted[i]);
 }
 
-TEST(InsertionSort, sort4) {
+TEST(SelectionSort, sort4) {
     int array[4] = {-1, 1, 0, 2}, arraySorted[4] = {-1, 0, 1, 2};
     sort(array, 4);
     for (int i = 0; i < 4; i++)
