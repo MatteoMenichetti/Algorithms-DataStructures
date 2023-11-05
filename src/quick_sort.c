@@ -12,6 +12,7 @@ int sort(int *array, int length) {
 void quick_sort(int *array, int l, int r) {
     if (l < r) {
         int i = partition(array, l, r);
+        if (i == r) return;
         quick_sort(array, i + 1, r);
         quick_sort(array, l, i - 1);
     }
@@ -21,16 +22,22 @@ void quick_sort(int *array, int l, int r) {
 
 int partition(int *array, int l, int r) {
     int i = l, j = r - 1;
-    while (i < j) {
+    for (;;) {
         while (array[j] > array[r]) {
+            if (i > j)break;
             j--;
         }
         while (array[i] < array[r]) {
+            if (i > j)break;
             i++;
+        }
+        if (array[i] == array[j])i++;
+        if (i > j) {
+            swap(array, i, r);
+            break;
         }
         swap(array, i, j);
     }
-    swap(array, i, r);
     return i;
 }
 
@@ -39,12 +46,3 @@ void swap(int *array, int min, int i) {
     array[min] = array[i];
     array[i] = t;
 }
-
-
-/*
-int main (){
-    int array[4] = {3,2,1,0}, length= sizeof(array)/ sizeof(array[0]);
-    sort(array, length);
-    return 0;
-}
- */
