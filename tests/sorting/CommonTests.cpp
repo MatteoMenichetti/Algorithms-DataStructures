@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../src/control.c"
+#include "../../src/sorting/control.c"
 
 int natural[10] = {9, 8, 6, 5, 7, 4, 3, 1, 2, 0};
 TEST(CommonTest, CorrectSize) {
