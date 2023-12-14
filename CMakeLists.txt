@@ -3,16 +3,18 @@ project(numbers LANGUAGES C CXX)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(CommonTest tests/sorting/CommonTests.cpp src/control.c)
+add_executable(CommonTest tests/sorting/CommonTests.cpp src/sorting/control.c)
 
 add_executable(InsertionSortTest tests/sorting/InsertionSort.cpp
-        src/insertion_sort.c ./src/control.c ./lib/common.h)
+        src/sorting/insertion_sort.c ./src/sorting/control.c ./lib/common.h)
 
 add_executable(SelectionSortTest tests/sorting/SelectionSort.cpp
-        src/selection_sort.c src/control.c ./lib/common.h)
+        src/sorting/selection_sort.c src/sorting/control.c ./lib/common.h)
 
-add_executable(QuickSortTests tests/sorting/QuickSortTests.cpp ./lib/common.h ./src/control.c src/quick_sort.c
+add_executable(QuickSortTests tests/sorting/QuickSortTests.cpp ./lib/common.h ./src/sorting/control.c src/sorting/quick_sort.c
         lib/quick_sort.h)
+
+add_executable(DataStructure ./tests/dataStructure/HeapTest.cpp ./tests/dataStructure/main.cpp)
 
 add_subdirectory(lib/google_test_lib)
 include_directories(lib/google_test_lib/googletest/include)
@@ -22,3 +24,4 @@ target_link_libraries(CommonTest gtest gtest_main)
 target_link_libraries(InsertionSortTest gtest gtest_main)
 target_link_libraries(SelectionSortTest gtest gtest_main)
 target_link_libraries(QuickSortTests gtest gtest_main)
+target_link_libraries(DataStructure gtest gtest_main)
