@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 extern "C" {
-#include "../lib/quick_sort.h"
+#include "../../lib/quick_sort.h"
 }
 
 TEST(QuickSort, partition) {

@@ -3,15 +3,15 @@ project(numbers LANGUAGES C CXX)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(CommonTest ./tests/CommonTests.cpp src/control.c)
+add_executable(CommonTest tests/sorting/CommonTests.cpp src/control.c)
 
-add_executable(InsertionSortTest ./tests/InsertionSort.cpp
+add_executable(InsertionSortTest tests/sorting/InsertionSort.cpp
         src/insertion_sort.c ./src/control.c ./lib/common.h)
 
-add_executable(SelectionSortTest ./tests/SelectionSort.cpp
+add_executable(SelectionSortTest tests/sorting/SelectionSort.cpp
         src/selection_sort.c src/control.c ./lib/common.h)
 
-add_executable(QuickSortTests ./tests/QuickSortTests.cpp ./lib/common.h ./src/control.c src/quick_sort.c
+add_executable(QuickSortTests tests/sorting/QuickSortTests.cpp ./lib/common.h ./src/control.c src/quick_sort.c
         lib/quick_sort.h)
 
 add_subdirectory(lib/google_test_lib)
