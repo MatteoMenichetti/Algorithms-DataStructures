@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "../../lib/common.h"
 
 typedef struct heap {
     int *array;

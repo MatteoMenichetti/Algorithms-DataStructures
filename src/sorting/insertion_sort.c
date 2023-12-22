@@ -1,4 +1,4 @@
-#include "../lib/common.h"
+#include "../../lib/common.h"
 
 void swap(int *array, int start, int limit) {
     int swap = array[limit];

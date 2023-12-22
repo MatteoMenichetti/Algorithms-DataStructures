@@ -25,3 +25,10 @@ target_link_libraries(InsertionSortTest gtest gtest_main)
 target_link_libraries(SelectionSortTest gtest gtest_main)
 target_link_libraries(QuickSortTests gtest gtest_main)
 target_link_libraries(DataStructure gtest gtest_main)
+
+enable_testing()
+
+add_executable(SelectionSortCTest tests/sorting/SelectionSort.cpp
+        src/sorting/selection_sort.c src/sorting/control.c ./lib/common.h)
+
+add_test(SSCTest SelectionSortCTest)

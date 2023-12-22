@@ -1,4 +1,4 @@
-#include "../lib/quick_sort.h"
+#include "../../lib/quick_sort.h"
 
 
 int sort(int *array, int length) {

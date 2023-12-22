@@ -1,4 +1,4 @@
-#include "../lib/common.h"
+#include "../../lib/common.h"
 
 int sort(int *array, int length) {
     int o = control(array, length), min;
