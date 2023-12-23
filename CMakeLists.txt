@@ -13,7 +13,7 @@ add_executable(SelectionSortTest tests/sorting/SelectionSort.cpp
         src/sorting/selection_sort.c src/sorting/control.c ./lib/common.h
         src/sorting/swap.c)
 
-add_executable(QuickSortRecursiveTests tests/sorting/QuickSortTests.cpp ./lib/common.h ./src/sorting/control.c src/sorting/quick_sort_recursive.c
+add_executable(QuickSortRecursiveTests tests/sorting/QuickSortTests.cpp ./lib/common.h ./src/sorting/control.c src/sorting/quick_sort_recursive.c src/sorting/swap.c
         lib/quick_sort.h)
 
 add_executable(DataStructureTest ./src/dataStructure/heap.c tests/dataStructure/HeapTest.cpp tests/dataStructure/main.cpp)
