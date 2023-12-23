@@ -3,7 +3,7 @@ project(numbers LANGUAGES C CXX)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(CommonTest tests/sorting/CommonTests.cpp src/sorting/control.c)
+add_executable(CommonTest tests/sorting/CommonTests.cpp src/sorting/control.c src/sorting/swap.c)
 
 add_executable(InsertionSortTest tests/sorting/InsertionSort.cpp
         src/sorting/insertion_sort.c ./src/sorting/control.c ./lib/common.h
