@@ -12,31 +12,24 @@ int sort(int *array, int length) {
 void quick_sort(int *array, int l, int r) {
     if (l < r) {
         int i = partition(array, l, r);
-        if (i == r) return;
         quick_sort(array, i + 1, r);
         quick_sort(array, l, i - 1);
     }
 }
 
-// 3, 2, 1, 0
+// -1, 1, 0, 2
 
 int partition(int *array, int l, int r) {
     int i = l, j = r - 1;
-    for (;;) {
-        while (array[j] > array[r]) {
-            if (i > j)break;
+    while (1) {
+        while (array[i] < array[r] && i < r)
+            i++;
+        while (array[j] > array[r] && j > l) {
             j--;
         }
-        while (array[i] < array[r]) {
-            if (i > j)break;
-            i++;
-        }
-        if (array[i] == array[j])i++;
-        if (i > j) {
-            swap(array, i, r);
-            break;
-        }
+        if (i >= j)break;
         swap(array, i, j);
     }
+    swap(array, i, r);
     return i;
 }
