@@ -40,9 +40,3 @@ int partition(int *array, int l, int r) {
     }
     return i;
 }
-
-void swap(int *array, int min, int i) {
-    int t = array[min];
-    array[min] = array[i];
-    array[i] = t;
-}
