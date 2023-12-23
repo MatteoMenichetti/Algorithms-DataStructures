@@ -17,9 +17,3 @@ int sort(int *array, int length) {
     }
     return EXIT_SUCCESS;
 }
-
-void swap(int *array, int min, int i) {
-    int t = array[min];
-    array[min] = array[i];
-    array[i] = t;
-}
