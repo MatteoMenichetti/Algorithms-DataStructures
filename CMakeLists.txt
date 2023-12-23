@@ -6,10 +6,12 @@ set(CMAKE_C_STANDARD 11)
 add_executable(CommonTest tests/sorting/CommonTests.cpp src/sorting/control.c)
 
 add_executable(InsertionSortTest tests/sorting/InsertionSort.cpp
-        src/sorting/insertion_sort.c ./src/sorting/control.c ./lib/common.h)
+        src/sorting/insertion_sort.c ./src/sorting/control.c ./lib/common.h
+        src/sorting/swap.c)
 
 add_executable(SelectionSortTest tests/sorting/SelectionSort.cpp
-        src/sorting/selection_sort.c src/sorting/control.c ./lib/common.h)
+        src/sorting/selection_sort.c src/sorting/control.c ./lib/common.h
+        src/sorting/swap.c)
 
 add_executable(QuickSortTests tests/sorting/QuickSortTests.cpp ./lib/common.h ./src/sorting/control.c src/sorting/quick_sort.c
         lib/quick_sort.h)
