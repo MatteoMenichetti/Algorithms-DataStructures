@@ -40,8 +40,8 @@ TEST(InsertionSort, sort4) {
 }
 
 TEST(InsertionSort, swap) {
-    int array[3] = {1, 2, 0};
-    swap(array, 0, 2);
+    int array[3] = {0, 2, 1};
+    swap(array, 1, 2);
     for (int i = 0; i < 3; i++)
         ASSERT_EQ(array[i], i);
 }
