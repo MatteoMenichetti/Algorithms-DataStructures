@@ -13,7 +13,7 @@ add_executable(SelectionSortTest tests/sorting/SelectionSort.cpp
         src/sorting/selection_sort.c src/sorting/control.c ./lib/common.h
         src/sorting/swap.c)
 
-add_executable(QuickSortTests tests/sorting/QuickSortTests.cpp ./lib/common.h ./src/sorting/control.c src/sorting/quick_sort.c
+add_executable(QuickSortRecursiveTests tests/sorting/QuickSortTests.cpp ./lib/common.h ./src/sorting/control.c src/sorting/quick_sort_recursive.c
         lib/quick_sort.h)
 
 add_executable(DataStructureTest ./src/dataStructure/heap.c tests/dataStructure/HeapTest.cpp tests/dataStructure/main.cpp)
@@ -25,14 +25,14 @@ include_directories(lib/google_test_lib/googlemock/include)
 target_link_libraries(CommonTest gtest gtest_main)
 target_link_libraries(InsertionSortTest gtest gtest_main)
 target_link_libraries(SelectionSortTest gtest gtest_main)
-target_link_libraries(QuickSortTests gtest gtest_main)
+target_link_libraries(QuickSortRecursiveTests gtest gtest_main)
 target_link_libraries(DataStructureTest gtest gtest_main)
 
 enable_testing()
 
 add_test(DataStructureTest DataStructureTest)
 
-add_test(QuickSortTests QuickSortTests)
+add_test(QuickSortRecursiveTests QuickSortTests)
 
 add_test(CommonTest CommonTest)
 
