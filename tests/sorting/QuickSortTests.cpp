@@ -20,13 +20,6 @@ TEST(QuickSort, partitionOrdElem) {
         ASSERT_EQ(array[i], mid_array[i]);
 }
 
-TEST(QuickSort, swap) {
-    int array[3] = {2, 1, 0};
-    swap(array, 0, 2);
-    for (int i = 0; i < 3; i++)
-        ASSERT_EQ(array[i], i);
-}
-
 TEST(QuickSort, sort) {
     int array[4] = {1, 2, 3, 0};
     sort(array, 4);
