@@ -20,11 +20,13 @@ TEST(HeapTest, insert) {
 //36 100 17 19
 
 TEST(HeapTest, insert1){
-    heap * heap = construct(3);
+    heap * heap = construct(4);
     int array[] = { 19, 36, 17, 100},sortedArray[] = {100, 36, 17, 19};
 
     for(int i : array)
         insert(heap, i);
+
+    ASSERT_EQ(heap->i, 4);
 
     for (int i = 0; i<4; i++)
         ASSERT_EQ(heap->array[i], sortedArray[i]);
@@ -36,6 +38,8 @@ TEST(HeapTest, remove){
     for(int i:array) insert(heap, i);
 
     remove(heap);
+
+    ASSERT_EQ(heap->i, 3);
 
     for(int i = 0; i<3; i++)
         ASSERT_EQ(sortedArray[i], heap->array[i]);
