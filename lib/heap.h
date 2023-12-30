@@ -10,4 +10,4 @@ void up_heap(int *, int);
 
 int insert(heap*, int);
 
-int remove(heap*, int n);
+int remove(heap*);
