@@ -25,6 +25,10 @@ void up_heap(int *array, int j) {
     }
 }
 
+void down_heap(int *array, int i){
+
+}
+
 int insert(heap *heap, int n) {
     if (heap == NULL)
         return EXIT_FAILURE;
