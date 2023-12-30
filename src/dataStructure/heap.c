@@ -2,7 +2,7 @@
 #include "../../lib/heap.h"
 
 heap *construct(int n) {
-    if (n <= 3)
+    if (n < 3)
         return NULL;
 
     heap *head = (struct heap *) malloc(sizeof(heap));
