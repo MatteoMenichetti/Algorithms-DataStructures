@@ -3,7 +3,7 @@
 typedef struct heap {
     int *array;
     int n;
-    int effective;
+    int i;
 } heap;
 
 heap *construct(int n) {
@@ -14,7 +14,7 @@ heap *construct(int n) {
 
     head->array = (int *) calloc(n, sizeof(int));
     head->n = n;
-    head->effective = 0;
+    head->i = 0;
     return head;
 }
 
@@ -32,13 +32,14 @@ void up_heap(int array[], int j) {
 
 int insert(heap *heap, int n) {
     if (heap == NULL)
-        return -1;
-    if (heap->effective == heap->n)
-        return -1;
-    heap->array[heap->effective + 1] = n;
-    heap->effective++;
+        return EXIT_FAILURE;
+    
+    if (heap->i == heap->n)
+        return EXIT_FAILURE;
+    heap->array[heap->i + 1] = n;
+    heap->i++;
 
     up_heap(heap->array, n);
 
-    return 1;
+    return EXIT_SUCCESS;
 }
