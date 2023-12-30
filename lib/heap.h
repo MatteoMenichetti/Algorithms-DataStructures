@@ -6,7 +6,7 @@ typedef struct heap {
 
 heap *construct(int);
 
-void up_heap(int *,int);
+void up_heap(int *, int);
 
 int insert(heap*, int);
 
