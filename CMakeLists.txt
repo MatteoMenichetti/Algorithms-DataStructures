@@ -16,7 +16,7 @@ add_executable(SelectionSortTest tests/sorting/SelectionSort.cpp
 add_executable(QuickSortRecursiveTests tests/sorting/QuickSortTests.cpp ./lib/common.h ./src/sorting/control.c src/sorting/quick_sort_recursive.c src/sorting/swap.c
         lib/quick_sort.h)
 
-add_executable(HeapTest ./src/dataStructure/heap.c tests/dataStructure/HeapTest.cpp)
+add_executable(HeapTest ./src/dataStructure/heap.c ./lib/heap.h ./tests/dataStructure/HeapTest.cpp)
 
 add_subdirectory(lib/google_test_lib)
 include_directories(lib/google_test_lib/googletest/include)
