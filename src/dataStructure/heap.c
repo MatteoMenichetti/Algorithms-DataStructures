@@ -1,10 +1,5 @@
 #include <stdlib.h>
-
-typedef struct heap {
-    int *array;
-    int n;
-    int i;
-} heap;
+#include "../../lib/heap.h"
 
 heap *construct(int n) {
     if (n <= 3)
@@ -20,7 +15,7 @@ heap *construct(int n) {
 
 // [6, 4, 7, 3, 2, 1]
 
-void up_heap(int array[], int j) {
+void up_heap(int *array, int j) {
     for(int i = j/2 ; j>0; j/=2){
         if(array[j]>array[i]){
             int t = array[j];
@@ -36,6 +31,7 @@ int insert(heap *heap, int n) {
     
     if (heap->i == heap->n)
         return EXIT_FAILURE;
+
     heap->array[heap->i + 1] = n;
     heap->i++;
 
