@@ -39,3 +39,7 @@ int insert(heap *heap, int n) {
 
     return EXIT_SUCCESS;
 }
+
+int remove(heap * heap){
+    return EXIT_SUCCESS;
+}
