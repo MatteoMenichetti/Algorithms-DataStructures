@@ -1,5 +1,7 @@
 #include <gtest/gtest.h>
-#include "../../src/dataStructure/heap.c"
+extern "C"{
+#include "../../lib/heap.h"
+}
 
 TEST(HeapTest, constructNminoreq3){
     ASSERT_EQ((long)construct(2),NULL);
@@ -31,5 +33,11 @@ TEST(HeapTest, insert1){
 TEST(HeapTest, remove){
     heap * heap = construct(4);
     int array[] = { 100, 19, 36, 17}, sortedArray[] = {36, 19, 17};
+    for(int i:array) insert(heap, i);
+
+    remove(heap);
+
+    for(int i = 0; i<3; i++)
+        ASSERT_EQ(sortedArray[i], heap->array[i]);
 
 }
