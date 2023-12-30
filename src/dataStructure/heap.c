@@ -44,6 +44,6 @@ int insert(heap *heap, int n) {
     return EXIT_SUCCESS;
 }
 
-int remove(heap * heap){
+int removeHeap(heap *){
     return EXIT_SUCCESS;
 }

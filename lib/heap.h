@@ -12,4 +12,4 @@ void down_heap(int *, int);
 
 int insert(heap*, int);
 
-int remove(heap*);
+int removeHeap(heap *);
