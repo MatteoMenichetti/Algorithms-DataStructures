@@ -4,7 +4,7 @@
 heap *construct(int *array, int n, int N) {
     if (n < 0 && N < 0) return NULL;
 
-    if (n < 3) return NULL;
+    if (N < 3) return NULL;
 
     if (n > N)return NULL;
 
@@ -12,12 +12,12 @@ heap *construct(int *array, int n, int N) {
 
     heap *head = (struct heap *) malloc(sizeof(heap));
 
-    head->array = array;
+    head->array = (int *) calloc(N, sizeof(int));
     head->n = n;
     head->N = N;
 
-    while (n > 0) {
-        up_heap(head->array, n--);
+    for(int i=1; i<n; i++){
+        insert(head, array[i]);
     }
 
     return head;
@@ -25,13 +25,16 @@ heap *construct(int *array, int n, int N) {
 
 // [6, 4, 7, 3, 2, 1]
 
-void up_heap(int *array, int j) {
-    for (int i = j / 2; j > 0; j /= 2) {
-        if (array[j] > array[i]) {
-            int t = array[j];
-            array[j] = array[i];
-            array[i] = t;
+void up_heap(int *array, int i) {
+    while (i > 1) {
+        for (int j = i / 2; j > 0; j = j / 2) {
+            if (array[j] < array[i]) {
+                int t = array[i];
+                array[i] = array[j];
+                array[j] = t;
+            }
         }
+        i--;
     }
 }
 
@@ -42,14 +45,6 @@ void down_heap(int *array, int i) {
 int insert(heap *heap, int el) {
     if (heap == NULL)
         return EXIT_FAILURE;
-
-    if (heap->i == heap->n)
-        return EXIT_FAILURE;
-
-    heap->array[heap->i + 1] = el;
-    heap->i++;
-
-    up_heap(heap->array, el);
 
     return EXIT_SUCCESS;
 }
