@@ -1,15 +1,25 @@
 #include <stdlib.h>
 #include "../../lib/heap.h"
 
-heap *construct(int *array, int n) {
-    if (n < 3)
-        return NULL;
+heap *construct(int *array, int n, int N) {
+    if (n < 0 && N < 0) return NULL;
+
+    if (n < 3) return NULL;
+
+    if (n > N)return NULL;
+
+    if (array == NULL) return NULL;
 
     heap *head = (struct heap *) malloc(sizeof(heap));
 
     head->array = array;
     head->n = n;
-    head->i = 0;
+    head->N = N;
+
+    while (n > 0) {
+        up_heap(head->array, n--);
+    }
+
     return head;
 }
 
@@ -44,6 +54,6 @@ int insert(heap *heap, int el) {
     return EXIT_SUCCESS;
 }
 
-int removeHeap(heap *) {
+int removeHeap(heap *heap) {
     return EXIT_SUCCESS;
 }

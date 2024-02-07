@@ -1,10 +1,10 @@
 typedef struct heap {
     int *array;
     int n;
-    int i;
+    int N;
 } heap;
 
-heap *construct(int *, int);
+heap *construct(int *, int, int);
 
 void up_heap(int *, int);
 
