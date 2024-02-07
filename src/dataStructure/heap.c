@@ -29,17 +29,17 @@ void down_heap(int *array, int i){
 
 }
 
-int insert(heap *heap, int n) {
+int insert(heap *heap, int el) {
     if (heap == NULL)
         return EXIT_FAILURE;
     
     if (heap->i == heap->n)
         return EXIT_FAILURE;
 
-    heap->array[heap->i + 1] = n;
+    heap->array[heap->i + 1] = el;
     heap->i++;
 
-    up_heap(heap->array, n);
+    up_heap(heap->array, el);
 
     return EXIT_SUCCESS;
 }
