@@ -16,7 +16,7 @@ heap *construct(int *array, int n, int N) {
     head->n = n;
     head->N = N;
 
-    for(int i=1; i<n; i++){
+    for (int i = 1; i < n; i++) {
         insert(head, array[i]);
     }
 
@@ -38,15 +38,24 @@ void up_heap(int *array, int i) {
     }
 }
 
-void down_heap(int *array, int i) {
-
+void down_heap(int *array, int i, int n) {
+    while(i>0){
+        for(int j = i*2; j < n; j=j*2)
+            break;
+    }
 }
 
 int insert(heap *heap, int el) {
     if (heap == NULL)
         return EXIT_FAILURE;
 
-    return EXIT_SUCCESS;
+    if (heap->n < heap->N) {
+        heap->n++;
+        heap->array[heap->n] = el;
+        up_heap(heap->array, heap->n);
+        return EXIT_SUCCESS;
+    }
+    return EXIT_FAILURE;
 }
 
 int removeHeap(heap *heap) {

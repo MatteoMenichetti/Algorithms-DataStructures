@@ -8,7 +8,7 @@ heap *construct(int *, int, int);
 
 void up_heap(int *, int);
 
-void down_heap(int *, int);
+void down_heap(int *, int, int);
 
 int insert(heap *, int);
 
