@@ -2,13 +2,14 @@
 #include "../../lib/heap.h"
 
 heap *construct(int *array, int n, int N) {
-    if (n < 0 && N < 0) return NULL;
-
-    if (N < 3) return NULL;
-
-    if (n > N)return NULL;
 
     if (array == NULL) return NULL;
+
+    if (n < 1) return NULL;
+
+    if (N < 4) return NULL;
+
+    if (n > N)return NULL;
 
     heap *head = (struct heap *) malloc(sizeof(heap));
 
@@ -39,9 +40,8 @@ void up_heap(int *array, int i) {
 }
 
 void down_heap(int *array, int i, int n) {
-    while(i>0){
-        for(int j = i*2; j < n; j=j*2)
-            break;
+    while (i > 0 && i <= n / 2) {
+        for (int j = i * 2; j < n; j = j * 2);
     }
 }
 
